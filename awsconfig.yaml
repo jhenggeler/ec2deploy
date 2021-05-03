@@ -1,0 +1,24 @@
+---
+# This YAML configuration specifies a server with two volumes and two users
+server:
+  instance_type: t2.micro
+  ami_type: amzn2
+  architecture: x86_64
+  root_device_type: ebs
+  virtualization_type: hvm
+  min_count: 1
+  max_count: 1
+  volumes:
+    - device: /dev/xvda
+      size_gb: 10
+      type: ext4
+      mount: /
+    - device: /dev/xvdf
+      size_gb: 100
+      type: xfs
+      mount: /data
+  users:
+    - login: user1
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3Gu7Fz2yQL1wW2xnmhvv3BwvHFlGnHfu7eoI8xo8oDf93xAaOSPTrUT3pQyFym1HnolwP5clIkLKXuDB0ffnOg/JdRBkMONJ+YY9vG+jdA37xb+WiAzSKP8WhUT5S8baLX5JRHNU8UduAtNxfUAs+kk0Vj1L61U1NGQEwUV7fE5PVl6b6KvkrT4PYiI0QiVJIVzbNMd+6pSXluDayxJnOvCKoAnVhVvK66owcPV8EKQrpHmf7j7+Ir7tx8LstWRL0o9B4jzYGPaD2AbX/y4T1V/d/bCqmZdnEyhJ4a73Uty9ogPiEDgfJxyYIwguTLv+gYUZgjLWtBxVE9tAmxLAX user1@localhost
+    - login: user2
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3Gu7Fz2yQL1wW2xnmhvv3BwvHFlGnHfu7eoI8xo8oDf93xAaOSPTrUT3pQyFym1HnolwP5clIkLKXuDB0ffnOg/JdRBkMONJ+YY9vG+jdA37xb+WiAzSKP8WhUT5S8baLX5JRHNU8UduAtNxfUAs+kk0Vj1L61U1NGQEwUV7fE5PVl6b6KvkrT4PYiI0QiVJIVzbNMd+6pSXluDayxJnOvCKoAnVhVvK66owcPV8EKQrpHmf7j7+Ir7tx8LstWRL0o9B4jzYGPaD2AbX/y4T1V/d/bCqmZdnEyhJ4a73Uty9ogPiEDgfJxyYIwguTLv+gYUZgjLWtBxVE9tAmxLAX user2@localhost
