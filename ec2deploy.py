@@ -8,7 +8,7 @@
    Assumptions: This program assumes:
        1. The user account executing this program has already been set up previously with "aws configure" (and the secret keys are already stored)
        2. Using python3 and the python3 executable is in /bin/python3
-       3. Dependencies below are already installed and working on the user's machine (pip, json, boto3)
+       3. Dependencies below are already installed and working on the user's machine (pip, json, boto3, yaml)
        4. Admin AWS permissions are set for the user executing this script for ec2 instances, keypairs, and security groups.
        5. Because of the ext4 ("/") special case requirement, limitations have been set up for this to be run in us-east-1 from a specific AMI I created and made public to make this easier.
        6. Does not cover all filesystems types for / (the root filesystem), but can be added in later revisions. 
